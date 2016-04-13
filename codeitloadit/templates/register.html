@@ -1,50 +1,48 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <form id="loginform" class="form-horizontal" role="form" method="post">
-        {% csrf_token %}
-        <div style="margin-bottom: 25px" class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input id="login-username" type="text" class="form-control" name="first_name" value="{{ first_name }}" placeholder="First Name">
-{#        </div>#}
-{##}
-{#        <div style="margin-bottom: 25px" class="input-group">#}
-            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input id="login-username" type="text" class="form-control" name="last_name" value="{{ last_name }}" placeholder="Last Name">
-        </div>
-
-        <div style="margin-bottom: 25px" class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input id="login-username" type="text" class="form-control" name="username" value="{{ username }}" placeholder="Username">
-        </div>
-
-        <div style="margin-bottom: 25px" class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input id="login-username" type="text" class="form-control" name="email" value="{{ email }}" placeholder="Email Addrress">
-        </div>
-
-        <div style="margin-bottom: 25px" class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <input id="login-password" type="password" class="form-control" name="password" value="{{ password }}" placeholder="Password">
-        </div>
-    
-        <div style="margin-bottom: 25px" class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <input id="login-confirm" type="password" class="form-control" name="confirm" value="{{ confirm }}" placeholder="Confirm">
-        </div>
-    
-        <div style="margin-top:10px" class="form-group">
-            <div class="col-sm-12 controls">
-                <input id="btn-login" type="submit" class="btn btn-success" value="Create Account">
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <h3 class="orange-text">Register</h3>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="first_name" type="text" class="validate" value="{{ first_name }}">
+                            <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="last_name" type="text" class="validate" value="{{ last_name }}">
+                            <label for="last_name">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="username" type="text" class="validate" value="{{ username }}">
+                            <label for="username">Username</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="email" type="email" class="validate" value="{{ email }}">
+                            <label for="email">Email Address</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="password" type="password" class="validate" value="{{ password }}">
+                            <label for="password">Password</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="confirm" type="password" class="validate" value="{{ confirm }}">
+                            <label for="confirm">Confirm Password</label>
+                        </div>
+                    </div>
+                    <div class="row center">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Create Account
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
-    </form>
-{% endblock %}
-
-{% block css %}
-<style type="text/css">
-    #loginform {
-        max-width: 400px;
-    }
-</style>
+    </div>
 {% endblock %}
